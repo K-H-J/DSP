@@ -1,0 +1,535 @@
+<html>
+    <head>
+        <title>Delivery</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./lower.css" type="text/css"></link>
+        <style type="text/css">
+            #delivery_time{
+                -ms-overflow-style: none;
+                margin-top:80px;
+                width:90%;
+                height:15%;
+                margin-left:5%;
+                overflow: auto;
+                white-space: nowrap;
+                border:0;
+            }
+            #delivery_time::-webkit-scrollbar{
+                display:none;
+            }
+
+            #funding_store{
+                -ms-overflow-style: none;
+                margin-top:40px;
+                width:90%;
+                height:16%;
+                margin-left:5%;
+                border: 0;
+                overflow: auto;
+                white-space: nowrap;
+            }
+            #funding_store::-webkit-scrollbar{
+                display:none;
+            }
+
+            #store_list{
+                -ms-overflow-style: none;
+                margin-top:60px;
+                width:90%;
+                height:48%;
+                margin-left:5%;
+                border: 0;
+                overflow:auto;
+            }
+            #store_list::-webkit-scrollbar{
+                display:none;
+            }
+
+            .time_elem{
+                width:280px;
+                height:80%;
+                display:inline-block;
+                margin-top:1.2vh;
+                border: 1px solid black;
+                border-radius:20px;
+                margin-left:30px;
+                background:white;
+                border:1px solid gray;
+            }
+            .time_upper_txt{
+                margin-top:3.2vh;
+                font-size:2.1vh;
+                text-align:center;
+            }
+            .time_lower_txt{
+                margin-top:20px;
+                font-size:1.4vh;
+                color:gray;
+                text-align:center;
+            }
+            .fund_elem{
+                width:200px;
+                display:inline-block;
+                border:1px solid black;
+                border-radius:20px;
+                text-align:center;
+                font-size:20px;
+                font-weight:bold;
+                padding-bottom:20px;
+                margin-left:20px;
+                background:white;
+                box-shadow:5px 5px gray;
+            }
+            .fund_img{
+                width:200px;
+                height:200px;
+                border-top-left-radius:20px;
+                border-top-right-radius:20px;
+                margin-bottom:10px;
+            }
+
+            .store_elem{
+                margin-top:30px;
+                width:100%;
+                height:15vw;
+            }
+            .store_left{
+                width:15vw;
+                height:15vw;
+                float:left;
+                border:1px solid black;
+                border-top-left-radius:20px;
+                border-bottom-left-radius:20px;
+                box-shadow:5px 5px gray;
+            }
+            .store_right{
+                width:700px;
+                height:15vw;
+                padding-left:2vw;
+                float:left;
+                border:1px solid black;
+                border-left:0;
+                border-top-right-radius:20px;
+                border-bottom-right-radius:20px;
+                background:white;
+                box-shadow:5px 5px gray;
+            }
+            .store_img{
+                width:15vw;
+                height:15vw;
+                border-top-left-radius:20px;
+                border-bottom-left-radius:20px;
+            }
+            .store_name{
+                margin-top:10px;
+                font-size:40px;
+                font-weight:bold;
+            }
+            .store_fund{
+                margin-top:15px;
+                margin-left:5px;
+                font-size:30px;
+            }
+            #title1, #title2, #title3{
+                font-size:30px;
+                position:absolute;
+                left:5%;
+                font-weight:bold;
+            }
+            #title1{
+                top:3vh;
+            }
+            #title2{
+                top:19vh;
+            }
+            #title3{
+                top:38vh;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="title1">Order Timetable</div>
+        <div id="title2">Recruiting Store</div>
+        <div id="title3">Store List</div>
+        <div id="delivery_time">
+            <div id="time_target" class="time_elem" style="margin-left:0" onclick="setting()">
+                <div class="time_upper_txt">Today <b>Lunch</b></div>
+                <div class="time_lower_txt">Arrive 12:00</div>
+            </div>
+
+            <div class="time_elem">
+                <div class="time_upper_txt">Today <b>Dinner</b></div>
+                <div class="time_lower_txt">Arrive 18:00</div>
+            </div>
+
+            <div class="time_elem">
+                <div class="time_upper_txt">Tmr <b>Lunch</b></div>
+                <div class="time_lower_txt">Arrive 12:00</div>
+            </div>
+
+            <div class="time_elem">
+                <div class="time_upper_txt">Tmr <b>Dinner</b></div>
+                <div class="time_lower_txt">Arrive 18:00</div>
+            </div>
+        </div>
+        <div id="funding_store">
+            <div class="fund_elem" style="margin-left:0">
+                <img class="fund_img" src="./img/store/샐러드포원-왕십리점.jpg" /></br>
+                샐러드포원-왕십리점</br>8/10
+            </div>
+
+            <div class="fund_elem">
+                <img class="fund_img" src="./img/store/황귀닭곰탕.jpg" /></br>
+                황귀닭곰탕</br>10/10
+            </div>
+
+            <div class="fund_elem">
+                <img class="fund_img" src="./img/store/샐러디-한양대점.jpg" /></br>
+                샐러디-한양대점</br>5/10
+            </div>
+
+            <div class="fund_elem">
+                <img class="fund_img" src="./img/store/싸움의고수-한양대점.jpg" /></br>
+                싸움의고수-한양대점</br>10/10
+            </div>
+
+            <div class="fund_elem">
+                <img class="fund_img" src="./img/store/삼일정.jpg" /></br>
+                삼일정</br>6/10
+            </div>
+        </div>
+
+        <div id="store_list">
+            <div class="store_elem" style="margin-top:0">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/샐러드포원-왕십리점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">샐러드포원-왕십리점</div>
+                    <div class="store_fund">8/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/셀럽드샐러드-성수본점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">셀럽드샐러드-성수본점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/아임요거트&아이스크림.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">아임요거트&아이스크림</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/황귀닭곰탕.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">황귀닭곰탕</div>
+                    <div class="store_fund">10/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/담꾹-신금호점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">담꾹-신금호점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/샐러디-답십리점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">샐러디-답십리점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/샐러디-한양대점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">샐러디-한양대점</div>
+                    <div class="store_fund">5/10</div>
+                </div>
+            </div>
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/케슬리.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">케슬리</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/써브웨이-한양대점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">써브웨이-한양대점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/알파카페&샌드위치.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">알파카페&샌드위치</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/샌드위치커피하우스.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">샌드위치커피하우스</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/타이난대만샌드위치.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">타이난대만샌드위치-왕십리점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/싸움의고수-한양대점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">싸움의고수-한양대점</div>
+                    <div class="store_fund">10/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/콰이인더홈.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">콰이인더홈</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/노량진수산시장삼천포수산.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">노량진수산시장삼천포수산</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/동태별곡.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">동태별곡</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/별바다.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">별바다</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/오늘은새우회-성동점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">오늘은새우회-성동점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/광동수산산오징어.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">광동수산산오징어</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/어사출또-황학점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">어사출또-황학점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/회뜨는총각-본점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">회뜨는총각-본점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/노량진수산시장벌교아줌마.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">노량진수산시장벌교아줌마</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/해원수산.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">해원수산</div>
+                    <div class="store_fund">8/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/선굼터-답십리점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">선굼터-답십리점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/7달러1인김치찌개-동대문구점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">7달러1인김치찌개-동대문구점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/혼밥대왕-건대점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">혼밥대왕-건대점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/한식1번가-건대점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">한식1번가-건대점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/통돼지두루치기김치찌개전문점.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">통돼지두루치기김치찌개전문점</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/한양식당-생갈치고등어조림.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">한양식당-생갈치고등어조림</div>
+                    <div class="store_fund">0/10</div>
+                </div>
+            </div>
+
+            <div class="store_elem">
+                <div class="store_left">
+                    <img class="store_img" src="./img/store/삼일정.jpg" /></br>
+                </div>
+                <div class="store_right">
+                    <div class="store_name">삼일정</div>
+                    <div class="store_fund">6/10</div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div id="lower">
+            <div id="lower_left" onclick="go_timer()"><img class="lower_img" src="./img/timer.png" /></div>
+            <div id="lower_mid" onclick="go_main()"><img class="lower_img" src="./img/diary.png" /></div>
+            <div id="lower_right"><img class="lower_img" src="./img/delivery.png" /></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            $('.fund_elem').css("display", "none");
+            $('.store_elem').css("display", "none");
+            $('#title2').css("display", "none");
+            $('#title3').css("display", "none");
+
+            function go_main(){
+                location.href="./main.html"
+            }
+
+            function go_timer(){
+                location.href="./timer.html"
+            }
+
+            function setting(){
+                $('.fund_elem').css("display", "inline-block");
+                $('.store_elem').css("display", "block");
+                $('#title2').css("display", "block");
+                $('#title3').css("display", "block");
+                $("#time_target").css("border","2px solid black");
+            }
+        </script>
+    </body>
+</html>

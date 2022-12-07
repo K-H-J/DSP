@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>Exercise Diary</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./lower.css" type="text/css"></link>
+        <style>
+            #upper{
+                margin-top:40px;
+                width:100%;
+                height:86%;
+                overflow:hidden auto;
+            }
+            .main_elem{
+                width:90%;
+                margin-left:5%;
+                margin-bottom:100px;
+                background:white;
+                border-radius:40px;
+                border:0;
+                padding-bottom:20px;
+                box-shadow:8px 8px gray;
+            }
+            .main_name{
+                width:30%;
+                float:left;
+                font-size:40px;
+                text-align:center;
+                border-right:1px solid black;
+                border-bottom:1px solid black;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+            .main_date{
+                float:left;
+                width:67%;
+                font-size:40px;
+                padding-left:20px;
+                border-bottom:1px solid black;
+                border-left:0;
+                padding-top:20px;
+                padding-bottom:20px;
+            }
+            .main_pic{
+                width:100%;
+                border-bottom:1px solid black;
+                border-top:0;
+                text-align:center;
+            }
+            .main_img{
+                width:95%;
+                margin-top:20px;
+                margin-bottom:20px;
+                border-radius:20px;
+            }
+            .main_desc{
+                width:764px;
+                border-top:1px solid black;
+                border-top:0;
+                padding-top:20px;
+                padding-bottom:20px;
+                padding-left:20px;
+            }
+            .desc_elem{
+                font-size:1.6vw;
+            }
+            .desc_detail{
+                font-size:1.3vw;
+                margin-top:30px;
+            }
+            .main_chat{
+                width:94.8%;
+                height:9vw;
+                padding:20px;
+            }
+            .chat_img_area{
+                width:9vw;
+                float:left;
+            }
+            .chat_img{
+                width:9vw;
+            }
+            .chat_area{
+                float:left;
+                width:65vw;
+                height:9vw;
+            }
+            .chat{
+                border-radius:35px;
+                margin-left:30px;
+                padding-left:15px;
+                width:60vw;
+                height:9vw;
+                font-size:3.7vw;
+                border:1px solid black;
+                box-shadow:4px 4px gray;
+
+            }
+            .chat_send_area{
+                float:left;
+                margin-left:10px;
+                width:9vw;
+                height:9vw;
+            }
+            .send_img{
+                width:9vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="upper">
+            <div class="main_elem">
+                <div class="main_upper">
+                    <div class="main_name">James</div>
+                    <div class="main_date">2022.12.5 9:00 AM</div>
+                </div>
+                <div class="main_pic">
+                    <img class="main_img" src="./img/treadmill.png" />
+                </div>
+                <div class="main_desc">
+                    <div class="desc_elem">▶ Type : Treadmill</div>
+                    <div class="desc_elem">▶ Time : 1 hour</div>
+                    <div class="desc_elem">▶ Calories consumed : 588kcal</div>
+                    <div class="desc_detail">I woke up in the morning and came to the gym right away and ran on the treadmill for an hour. It was hard at first, but now that I'm used to it, I can do it</div>                  
+                </div>
+                <div class="main_chat">
+                    <div class="chat_img_area">
+                        <img class="chat_img" src="./img/chat.png" />
+                    </div>
+                    <div class="chat_area">
+                        <input class="chat" type="text" placeholder="Add comment..." />
+                    </div>
+                    <div class="chat_send_area">
+                        <img class="send_img" src="./img/send.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_elem">
+                <div class="main_upper">
+                    <div class="main_name">Emma</div>
+                    <div class="main_date">2022.11.30 3:30 PM</div>
+                </div>
+                <div class="main_pic">
+                    <img class="main_img" src="./img/tennis.png" />
+                </div>
+                <div class="main_desc">
+                <div class="desc_elem">▶ Type : Tennis</div>
+                    <div class="desc_elem">▶ Time : 2 hour</div>
+                    <div class="desc_elem">▶ Calories consumed : 1176kcal</div>
+                    <div class="desc_detail">I played tennis with my club members for 2 hours in the afternoon and it was very fun</div>
+                </div>
+                <div class="main_chat">
+                    <div class="chat_img_area">
+                        <img class="chat_img" src="./img/chat.png" />
+                    </div>
+                    <div class="chat_area">
+                        <input class="chat" type="text" placeholder="Add comment..." />
+                    </div>
+                    <div class="chat_send_area">
+                        <img class="send_img" src="./img/send.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lower">
+            <div id="lower_left" onclick="go_timer()"><img class="lower_img" src="./img/timer.png" /></div>
+            <div id="lower_mid"><img class="lower_img" src="./img/plus.png" /></div>
+            <div id="lower_right" onclick="go_delivery()"><img class="lower_img" src="./img/delivery.png" /></div>
+            
+        </div>
+
+        <script>
+            function go_timer(){
+                location.href="./timer.html"
+            }
+
+            function go_delivery(){
+                location.href="./delivery.html"
+            }
+        </script>
+    </body>
+</html>
