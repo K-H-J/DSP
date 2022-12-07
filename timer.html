@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <title>Timer</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./lower.css" type="text/css"></link>
+        <style>
+            #upper{
+                width:100%;
+                height:25%;
+            }
+            #status{
+                width:40%;
+                text-align:center;
+                margin-top:30px;
+                margin-left:80px;
+                float:left;
+            }
+            #status_img{
+                width:250px;
+            }
+            #user_timer{
+                font-size:50px;
+            }
+            #oper_box{
+                float:left;
+                width:50%;
+            }
+
+            #btn_oper{
+                margin-left:100px;
+                width:250px;
+                margin-top:100px;
+            }
+
+            #arrow_group, #arrow_follower{
+                font-size:50px;
+                margin-top:50px;
+                margin-bottom:20px;
+                margin-left:50px;
+                height:60px;
+            }
+
+            #group_container{
+                width:90%;
+                margin-left:5%;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 40px;
+                column-gap: 40px;
+            }
+            #follower_container{
+                width:90%;
+                margin-left:5%;
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 40px;
+                column-gap: 40px;
+                margin-bottom:30px;
+            }
+
+            #middle{
+                height:63%;
+                overflow:hidden auto;
+            }
+
+            .middle_stat{
+                width:100%;
+                text-align:center;
+                border-radius:40px;
+                box-shadow:5px 5px #545248;
+                background:#FDF6D9;
+                
+            }
+            .middle_name{
+                font-size:35px;
+                font-weight:bold;
+                width:100%;
+                text-align:center;
+            }
+            .middle_stat_img{
+                width:200px;
+            }
+            .middle_timer{
+                padding-bottom:15px;
+                font-size:35px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="upper">
+            <div id="status">
+                <img id="status_img" src="./img/user_rest.png" />
+                <div id="user_timer">00:00:00</div>
+            </div>
+            <div id="oper_box" onclick="click_oper()">
+                <img id="btn_oper" src="./img/play.png" />
+            </div>
+        </div>
+        <div id="middle">
+            <div id="arrow_group" onclick="group1_click()">▲ Group Member</div>
+            <div id="group_container">
+                <div class="middle_stat" style="background:#FFE8E0">
+                    <div class="middle_name">James</div>
+                    <img class="middle_stat_img" src="./img/user_exercise.png" />
+                    <div id="target1" class="middle_timer">03:13:38</div>
+                </div>
+                <div class="middle_stat">
+                    <div class="middle_name">Emma</div>
+                    <img class="middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_timer">01:30:00</div>
+                </div>
+                <div class="middle_stat middle_target">
+                    <div class="middle_name">Me</div>
+                    <img class="middle_img_me middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_me middle_timer">00:00:00</div>
+                </div>
+                <div class="middle_stat">
+                    <div class="middle_name">James</div>
+                    <img class="middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_timer">00:00:00</div>
+                </div>
+            </div>
+            <div id="arrow_follower" onclick="group2_click()">▲ Follower</div>
+            <div id="follower_container">
+                <div class="middle_stat">
+                    <div class="middle_name">Olivia</div>
+                    <img class="middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_timer">05:40:13</div>
+                </div>
+                <div class="middle_stat" style="background:#FFE8E0">
+                    <div class="middle_name">Robert</div>
+                    <img class="middle_stat_img" src="./img/user_exercise.png" />
+                    <div id="target2" class="middle_timer">02:15:52</div>
+                </div>
+                <div class="middle_stat middle_target">
+                    <div class="middle_name">Me</div>
+                    <img class="middle_img_me middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_me middle_timer">00:00:00</div>
+                </div>
+                <div class="middle_stat">
+                    <div class="middle_name">Emily</div>
+                    <img class="middle_stat_img" src="./img/user_rest.png" />
+                    <div class="middle_timer">00:00:00</div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="lower">
+            <div id="lower_left"><img class="lower_img" src="./img/timer.png" /></div>
+            <div id="lower_mid" onclick="go_main()"><img class="lower_img" src="./img/diary.png" /></div>
+            <div id="lower_right" onclick="go_delivery()"><img class="lower_img" src="./img/delivery.png" /></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            var arrow_group = true;
+            var arrow_follower = true;
+            var my_time = 0;
+            var is_mytimer = false;
+            var time1 = 11618;
+            var time2 = 8152;
+
+            make_timer();
+
+            function go_main(){
+                location.href="./main.html"
+            }
+
+            function go_delivery(){
+                location.href="./delivery.html"
+            }
+
+            function group1_click(){
+                if(arrow_group){
+                    $("#arrow_group").text("▼ Group Member")
+                    $("#group_container").css("display", "none");
+                    arrow_group = false;
+                }else{
+                    $("#arrow_group").text("▲ Group Member")
+                    $("#group_container").css("display", "grid");
+                    arrow_group = true;
+                }
+            }
+
+            function group2_click(){
+                if(arrow_follower){
+                    $("#arrow_follower").text("▼ Follower");
+                    $("#follower_container").css("display", "none");
+                    arrow_follower = false;
+                }else{
+                    $("#arrow_follower").text("▲ Follower");
+                    $("#follower_container").css("display", "grid");
+                    arrow_follower = true;
+                }
+            }
+
+            function start_thread(){
+                $("#btn_oper").attr("src","./img/stop.png");
+                $("#status_img").attr("src", "./img/user_exercise.png");
+                $(".middle_img_me").attr("src", "./img/user_exercise.png");
+                $(".middle_target").css("background", "#FFE8E0")
+
+                worker = new Worker("worker.js");
+                worker.onerror = (e)=>{
+                console.log("error " + e.message);
+                }
+                worker.onmessage = (e)=>{
+                    my_time = e.data;
+                    var time_text = time_to_text(my_time);
+                    $("#user_timer").text(time_text);
+                    $(".middle_me").text(time_text);
+
+                }
+
+                worker.postMessage(my_time);
+            }
+
+            function break_thread(){
+                worker.terminate();
+                $("#btn_oper").attr("src","./img/play.png");
+                $("#status_img").attr("src", "./img/user_rest.png");
+                $(".middle_img_me").attr("src", "./img/user_rest.png");
+                $(".middle_target").css("background", "#FDF6D9")
+            }
+
+            function click_oper(){
+                if(is_mytimer){
+                    break_thread();
+                    is_mytimer = false;
+                }else{
+                    start_thread();
+                    is_mytimer = true;
+                }
+            }
+
+            function make_timer(){
+                time_check = setInterval(function(){
+                    time1++;
+                    time2++;
+                    var time_text1 = time_to_text(time1);
+                    var time_text2 = time_to_text(time2);
+                    $("#target1").text(time_text1);
+                    $("#target2").text(time_text2);
+                },1000);
+            }
+
+            function time_to_text(sec){
+                var min = parseInt(sec/60);
+                sec = sec - min*60;
+                var hour = parseInt(min/60);
+                min = min - hour*60;
+                if(hour < 10){
+                    hour = "0"+hour;
+                }
+                if(min < 10){
+                    min = "0"+min;
+                }
+                if(sec < 10){
+                    sec = "0"+sec;
+                }
+                return hour+":"+min+":"+sec;
+            }
+        </script>
+    </body>
+</html>

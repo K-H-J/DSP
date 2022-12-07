@@ -1,0 +1,36 @@
+body{
+    margin:0;
+    background:#DCF8F6;
+}
+#lower{
+    position:fixed;
+    left:15%;
+    bottom:20px;
+    width:70%;
+    height:150px;
+    background:#05293C;
+    border-radius:30px;
+}
+#lower_left{
+    margin-left:3%;
+    width:32%;
+    height:100%;
+    float:left;
+    text-align:center;
+}
+#lower_mid{
+    width:32%;
+    height:100%;
+    float:left;
+    text-align:center;
+}
+#lower_right{
+    width:32%;
+    height:100%;
+    float:left;
+    text-align:center;
+}
+.lower_img{
+    margin-top:35px;
+    width:80px;
+}

@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <title>Sign up</title>
+        <style type="text/css">
+            body {
+                margin:70px;
+                background:#DCF8F6;
+            }
+            #info_box{
+                border:1px solid gray;
+                width:100%;
+                background:white;
+                border-radius:20px;
+            }
+            .info{
+                font-size:40px;
+                border:0;
+                margin-top:20px;
+                margin-left:10px;
+                padding-left:5px;
+            }
+            .inner_box{
+                border-bottom:1px solid gray;
+                height:90px;
+            }
+            #btn_duplicate{
+                width:300px;
+                height:60px;
+                font-size:25px;
+                margin-left:10px;
+                border:0;
+                border-radius:10px;
+                background:#05BFAB;
+                color:white
+            }
+            #survey_box{
+                margin-top:100px;
+            }
+            .ques{
+                font-size:25px;
+                font-weight:bold;
+            }
+            .answer{
+                margin-top:30px;
+            }
+            .rad_ans{
+                width:25px;
+                height:25px;
+                margin-top:40px;
+            }
+            .ans_text{
+                font-size:15px;
+            }
+            #btn_end{
+                margin-top:80px;
+                width:80%;
+                height:130px;
+                margin-left:10%;
+                font-size:50px;
+                border:0;
+                border-radius:20px;
+                background:#EE8B52;
+                color:white
+            }
+            .ques_box{
+                background:white;
+                border:0;
+                border-radius:20px;
+                padding:50px;
+                padding-top:30px;
+                padding-bottom:30px;
+                margin-top:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="info_box">
+            <div class="inner_box">
+                <input id="id" type="text" placeholder="ID" class="info"/>
+                <button id="btn_duplicate" onclick="check_duplicate()">Check Duplicate</button>
+            </div>
+            <div class="inner_box">
+                <input id="pw" type="password" placeholder="Password" class="info"/>
+            </div>
+            <div class="inner_box">
+                <input id="pw_re" type="password" placeholder="Recheck Password" class="info"/>
+            </div>
+            <div style="height:90px;">
+                <input id="name" type="text" placeholder="Nickname" class="info"/>
+            </div>
+            
+        </div>
+
+        <div id="survey_box">
+            <div class="ques_box">
+                <div class="ques">How many days a week can you spend exercising?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='1' /> a day</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='2' /> 2 days</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='3' /> 3 days</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='4' /> 4 days</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='5' /> 5 days</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='6' /> 6 days</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q01' value='7' /> 7 days</label>
+                </div>
+            </div>
+            
+            <div class="ques_box">
+                <div class="ques">How many hours of exercise is available a day now?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q02' value='1' /> less than an hour</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q02' value='2' /> more than 1 hour and less than 2 hours</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q02' value='3' /> more than 2 hours and less than 3 hours</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q02' value='4' /> more than 3 hours and less than 4 hours</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q02' value='5' /> more than 4 hours</label>
+                </div>
+            </div>
+            
+
+            <div class="ques_box">
+                <div class="ques">How interested are you in exercising?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q03' value='1' /> very uninterested</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q03' value='2' /> not interested</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q03' value='3' /> a little interested</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q03' value='4' /> greatly interested</label></br>
+                </div>
+            </div>
+            
+
+            <div class="ques_box">
+                <div class="ques">How good do you think you are at exercising?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q04' value='1' /> very bad</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q04' value='2' /> not good</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q04' value='3' /> a little good</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q04' value='4' /> very good</label></br>
+                </div>
+            </div>
+            
+
+            <div class="ques_box">
+                <div class="ques">How many minutes away is the exercise facility from your residence?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='1' /> less than 10 minutes</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='2' /> more than 10 minutes and less than 20 minutes</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='3' /> more than 20 minutes and less than 30 minutes</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='4' /> more than 30 minutes and less than 40 minutes</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='5' /> more than 40 minutes and less than 50 minutes</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q05' value='6' /> more than 50 minutes</label>
+                </div>
+            </div>
+            
+
+            <div class="ques_box">
+                <div class="ques">How much do you want to spend in a month's exercise?</div>
+                <div class="answer">
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='1' /> less than 100,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='2' /> more than 100,000 won and less than 200,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='3' /> more than 200,000 won and less than 300,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='4' /> more than 300,000 won and less than 400,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='5' /> more than 400,000 won and less than 500,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='6' /> more than 500,000 won and less than 600,000 won</label></br>
+                    <label class="ans_text"><input class="rad_ans" type='radio' name='q06' value='7' /> more than 600,000 won</label>
+                </div>
+            </div>
+            
+        </div>
+
+        <button id="btn_end" onclick="sign_up()">Sign Up</button>
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript">
+            function check_duplicate(){
+                alert("Available ID.");
+            }
+
+            function sign_up(){
+                var id = $("#id").val();
+                var pw = $("#pw").val();
+                var pw_re = $("#pw_re").val();
+                var name = $("#name").val();
+
+                var q01 = $('input:radio[name="q01"]:checked').val();
+                var q02 = $('input:radio[name="q02"]:checked').val();
+                var q03 = $('input:radio[name="q03"]:checked').val();
+                var q04 = $('input:radio[name="q04"]:checked').val();
+                var q05 = $('input:radio[name="q05"]:checked').val();
+                var q06 = $('input:radio[name="q06"]:checked').val();
+
+                var q = q01+"|"+q02+"|"+q03+"|"+q04+"|"+q05+"|"+q06;
+
+                alert('Complete sign up.');
+                location.href="./login.html";
+            }
+        </script>
+    </body>
+</html>
